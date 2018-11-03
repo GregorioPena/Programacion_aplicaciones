@@ -1,23 +1,24 @@
 //====================================
 //===        PROGRAMA EN C++       ===
 //====================================
-/* Comentarios sobre el programa*/
+/* Incluimos la libreria tablero_array.h, donde están definidos los metodos.
+Es necesario incluir la libreria " " y luego usar el namespace donde están
+definidos los metodos
+No es necesario declarar las funciones al principio ///--- Funciones Método */
 
 ///--- Library
 #include <iostream>
 #include <stdio.h>
-#include "metodos.h"
+#include "tablero_array.h"
+//#include "./path/tablero_array.h"     // también se puede incluir a través de un path
 
 /* Espacio */
 using namespace std;
+using namespace Metodos;
 
 ///--- Global Variable
 
 ///--- Funciones Método
-void PositionX(int xP);
-void PositionY(int yP);
-void LLenar(int aLL, int bLL, int zLL, int *pLL);
-void Imprimir(int aI, int bI, int xI, int *pI);
 
 //================================
 //=====         MAIN         =====
@@ -50,44 +51,3 @@ int main()
 //========================================================
 //================       MÉTODOS       ===================
 //========================================================
-///--- Posicionar x
-void PositionX(int xP)
-{
-    for (int i = 0; i < xP; i++)
-        printf(" ");
-}
-
-///--- Posicionar y
-void PositionY(int yP)
-{
-    for (int j = 0; j < yP; j++)
-        printf("\n");
-}
-
-///--- LLenar datos del arreglo
-void LLenar(int aLL, int bLL, int zLL, int *pLL)
-{
-    for (int i = 0; i < aLL; i++)
-    {
-        for (int j = 0; j < bLL; j++)
-        {
-            *(pLL + i * bLL + j) = zLL; // Tabla[i][j] = *(pll + i*bLL + j)
-            zLL++;
-        }
-    }
-}
-
-///--- Imprimir datos del arreglo
-void Imprimir(int aI, int bI, int xI, int *pI)
-{
-    for (int i = 0; i < aI; i++)
-    {
-        PositionX(xI);
-        for (int j = 0; j < bI; j++)
-        {
-            printf("%03i ", *(pI + i * bI + j));
-        }
-        printf("\n");
-    }
-}
-
